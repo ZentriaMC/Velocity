@@ -29,6 +29,7 @@ import com.velocitypowered.proxy.protocol.packet.StatusRequest;
 import com.velocitypowered.proxy.protocol.packet.StatusResponse;
 import com.velocitypowered.proxy.protocol.packet.TabCompleteRequest;
 import com.velocitypowered.proxy.protocol.packet.TabCompleteResponse;
+import com.velocitypowered.proxy.protocol.packet.Team;
 import com.velocitypowered.proxy.protocol.packet.TitlePacket;
 import io.netty.buffer.ByteBuf;
 
@@ -171,6 +172,10 @@ public interface MinecraftSessionHandler {
   }
 
   default boolean handle(TabCompleteResponse packet) {
+    return false;
+  }
+
+  default boolean handle(Team packet) {
     return false;
   }
 
